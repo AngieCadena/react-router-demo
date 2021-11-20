@@ -3,7 +3,7 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
-import Products from "./Products";
+import Profesores from "./Profesores";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 
@@ -31,7 +31,7 @@ export default function App() {
             <Link to="/category">Category</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/profesores">Profesores</Link>
           </li>
           <li>
             <Link to="/admin">Admin area</Link>
@@ -46,8 +46,8 @@ export default function App() {
         <Route path="/category">
           <Category />
         </Route>
-        <Route path="/products">
-          <Products />
+        <Route path="/profesores">
+          <Profesores />
         </Route>
         <Route path="/login">
           <Login />
@@ -56,4 +56,4 @@ export default function App() {
       </Switch>
     </div>
   );
-}
+}  

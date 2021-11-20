@@ -2,10 +2,10 @@
 
 import React from "react";
 import { Link, Route, useRouteMatch } from "react-router-dom";
-import Product from "./Product";
+import Profesor from "./Profesor";
 
-const Products = ({ match }) => {
-  const productData = [
+const Profesores = ({ match }) => {
+  const profesorData = [
     {
       id: 1,
       name: "NIKE Liteforce Blue Sneakers",
@@ -39,10 +39,10 @@ const Products = ({ match }) => {
   const { url } = useRouteMatch();
 
   /* Create an array of `<li>` items for each product */
-  const linkList = productData.map((product) => {
+  const linkList = profesorData.map((profesor) => {
     return (
-      <li key={product.id}>
-        <Link to={`${url}/${product.id}`}>{product.name}</Link>
+      <li key={profesor.id}>
+        <Link to={`${url}/${profesor.id}`}>{profesor.name}</Link>
       </li>
     );
   });
@@ -51,18 +51,18 @@ const Products = ({ match }) => {
     <div>
       <div>
         <div>
-          <h3>Products</h3>
+          <h3>Profesores</h3>
           <ul>{linkList}</ul>
         </div>
       </div>
 
-      <Route path={`${url}/:productId`}>
-        <Product data={productData} />
+      <Route path={`${url}/:profesorId`}>
+        <Profesor data={profesorData} />
       </Route>
       <Route exact path={url}>
-        <p>Please select a product.</p>
+        <p>Please select a profesor.</p>
       </Route>
     </div>
   );
 };
-export default Products;
+export default Profesores;
