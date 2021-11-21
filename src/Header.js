@@ -1,9 +1,10 @@
 import React from "react";
 import {LinkContainer} from "react-router-bootstrap";
-import {Navbar,Nav,Container} from "react-bootstrap";
-
+import {Nav,Container} from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
 const Header = () => {
     return (
+        
         <header>
             <Navbar bg="dark" variant="dark" expand="lg"  collapseOnSelect>
             <Container>
@@ -26,6 +27,8 @@ const Header = () => {
             </Container>
             </Navbar>
         </header>
+        
 
     );
 };
+export default Header;

@@ -1,7 +1,8 @@
 // src/profesor.js
 
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import {Card, Form, Container} from "react-bootstrap";
 
 const Profesor = ({ data }) => {
   const { profesorId } = useParams();
@@ -11,14 +12,27 @@ const Profesor = ({ data }) => {
   if (profesor) {
     profesorData = (
       <div>
-        <h3> {profesor.name} </h3>
-        <p>{profesor.description}</p>
-        <hr />
-        <h4>{profesor.status}</h4>
+       
+        
+        {/* <img src={"https://static.diariofemenino.com/media/13501/c/cartas-de-agradecimiento-a-un-profesor-o-profesora-gracias-por-todo-lg.jpg"} alt="imagenprofesor"/>
+         */}
+        <Container>
+         <h3 className="h3-heading text-primary">
+           {profesor.nombre} </h3>
+        <p>{profesor.descripcion}</p>
+
+          <Form>
+            <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Label>Nombre del estudiante</Form.Label>
+            <Form.Control type="text" placeholder="Nombre del estudiante" />
+            </Form.Group>
+  
+          </Form>
+        </Container>
       </div>
     );
   } else {
-    profesorData = <h2> Sorry. profesor doesn't exist </h2>;
+    profesorData = <h2> Lo sentimos, el profesor (a) que busca no existe </h2>;
   }
 
   return (
